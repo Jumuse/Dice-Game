@@ -35,3 +35,23 @@ function player2active() {
     dotRight.hidden = false;
     dotLeft.hidden = true;
 }
+
+//Roll the dice Player1
+function rollTheDice() {
+    var randomNumber = Math.floor(Math.random() * 6) + 1;
+    document.querySelector(".img").setAttribute("src", "dice" + randomNumber + ".png");
+        if(randomNumber === 1) {
+        currentTemp = 0;
+        round1.innerHTML, round2.innerHTML = 0;
+        player1Turn = !player1Turn;
+
+        } else {
+        currentTemp = parseFloat(currentTemp) + randomNumber
+         
+            if(player1Turn) {
+            player1active();
+            } else {
+            player2active();
+        };}
+    }
+
