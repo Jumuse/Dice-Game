@@ -90,3 +90,14 @@ document.querySelector('.hold').addEventListener('click', () => {
     };
 })
 
+// New Game function
+document.querySelector('.newGame').addEventListener('click', () => {
+    rollBtn.disabled = false;
+    scoreTable = [0, 0];
+    global1.innerHTML = scoreTable[0];
+    global2.innerHTML = scoreTable[1];
+    currentTemp = 0;
+    round1.innerHTML, round2.innerHTML = 0;
+})
+
+
