@@ -60,5 +60,33 @@ document.querySelector('.roll').addEventListener('click', () => {
             } else {
             player2active();
         };}
-    })
+})
+
+//Add currentScore to Global
+document.querySelector('.hold').addEventListener('click', () => {
+    currentGlobal = parseFloat(currentTemp) + parseFloat(currentGlobal);
+    currentTemp = 0;
+    if(player1Turn) {
+        scoreTable[0] += currentGlobal;
+        global1.textContent = scoreTable[0];
+        round1.innerHTML = 0;
+        player2active();
+
+    } else {
+        scoreTable[1] += currentGlobal;
+        global2.textContent = scoreTable[1];
+        round2.innerHTML = 0;
+        player1active();
+    };
+    reset();
+    if(scoreTable[0] >= 10){
+        alert(`Félicitations ${player1.textContent}`);
+        rollBtn.disabled = true;
+        round1.innerHTML, round2.innerHTML = 0;
+    } else if (scoreTable[1] >= 10){
+        alert(`Félicitations ${player2.textContent}`);
+        rollBtn.disabled = true;
+        round1.innerHTML, round2.innerHTML = 0;
+    };
+})
 
