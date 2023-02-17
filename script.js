@@ -36,8 +36,15 @@ function player2active() {
     dotLeft.hidden = true;
 }
 
+// Function reset
+var reset = () => {
+    currentTemp = 0;
+    currentGlobal = 0;
+    player1Turn = !player1Turn;
+}
+
 //Roll the dice Player1
-function rollTheDice() {
+document.querySelector('.roll').addEventListener('click', () => {
     var randomNumber = Math.floor(Math.random() * 6) + 1;
     document.querySelector(".img").setAttribute("src", "dice" + randomNumber + ".png");
         if(randomNumber === 1) {
@@ -53,5 +60,5 @@ function rollTheDice() {
             } else {
             player2active();
         };}
-    }
+    })
 
