@@ -13,8 +13,25 @@ let currentTemp = 0;
 let currentGlobal = 0;
 let scoreTable = [0, 0];
 
-// Change player name
+// Edit player name
 document.querySelector('.editNames').addEventListener('click', () => {
     player1.innerHTML = prompt("Entrez le nom du Joueur 1");
     player2.innerHTML = prompt("Entrez le nom du Joueur 2");
     })
+
+//Functions player1 & 2
+function player1active() {
+    round1.innerHTML = currentTemp
+    player1.style.fontWeight = "700";
+    player2.style.fontWeight = "normal";
+    dotRight.hidden = true;
+    dotLeft.hidden = false;
+
+}
+function player2active() {
+    round2.innerHTML = currentTemp;
+    player2.style.fontWeight = "700";
+    player1.style.fontWeight = "normal";
+    dotRight.hidden = false;
+    dotLeft.hidden = true;
+}
