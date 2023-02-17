@@ -12,3 +12,9 @@ let dotLeft = document.getElementById('dotLeft');
 let currentTemp = 0;
 let currentGlobal = 0;
 let scoreTable = [0, 0];
+
+// Change player name
+document.querySelector('.editNames').addEventListener('click', () => {
+    player1.innerHTML = prompt("Entrez le nom du Joueur 1");
+    player2.innerHTML = prompt("Entrez le nom du Joueur 2");
+    })
