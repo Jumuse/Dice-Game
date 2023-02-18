@@ -17,7 +17,7 @@ let scoreTable = [0, 0];
 document.querySelector('.editNames').addEventListener('click', () => {
     player1.innerHTML = prompt("Entrez le nom du Joueur 1");
     player2.innerHTML = prompt("Entrez le nom du Joueur 2");
-    })
+});
 
 //Functions player1 & 2
 const player1active = () => {
@@ -27,21 +27,26 @@ const player1active = () => {
     dotRight.hidden = true;
     dotLeft.hidden = false;
 
-}
+};
 const player2active = () => {
     round2.innerHTML = currentTemp;
     player2.style.fontWeight = "700";
     player1.style.fontWeight = "normal";
     dotRight.hidden = false;
     dotLeft.hidden = true;
-}
+};
+
+// Onload paremeters
+window.onload = (event) => {
+    player1active();
+  };
 
 // Function reset
 var reset = () => {
     currentTemp = 0;
     currentGlobal = 0;
     player1Turn = !player1Turn;
-}
+};
 
 //Roll the dice Player1
 document.querySelector('.roll').addEventListener('click', () => {
@@ -60,7 +65,7 @@ document.querySelector('.roll').addEventListener('click', () => {
             } else {
             player2active;
         };}
-})
+});
 
 //Add currentScore to Global
 document.querySelector('.hold').addEventListener('click', () => {
@@ -88,7 +93,7 @@ document.querySelector('.hold').addEventListener('click', () => {
         rollBtn.disabled = true;
         round1.innerHTML, round2.innerHTML = 0;
     };
-})
+});
 
 // New Game function
 document.querySelector('.newGame').addEventListener('click', () => {
@@ -98,6 +103,6 @@ document.querySelector('.newGame').addEventListener('click', () => {
     global2.innerHTML = scoreTable[1];
     currentTemp = 0;
     round1.innerHTML, round2.innerHTML = 0;
-})
+});
 
 
