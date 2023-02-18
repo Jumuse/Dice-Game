@@ -20,7 +20,7 @@ document.querySelector('.editNames').addEventListener('click', () => {
     })
 
 //Functions player1 & 2
-function player1active() {
+const player1active = () => {
     round1.innerHTML = currentTemp
     player1.style.fontWeight = "700";
     player2.style.fontWeight = "normal";
@@ -28,7 +28,7 @@ function player1active() {
     dotLeft.hidden = false;
 
 }
-function player2active() {
+const player2active = () => {
     round2.innerHTML = currentTemp;
     player2.style.fontWeight = "700";
     player1.style.fontWeight = "normal";
@@ -56,9 +56,9 @@ document.querySelector('.roll').addEventListener('click', () => {
         currentTemp = parseFloat(currentTemp) + randomNumber
          
             if(player1Turn) {
-            player1active();
+            player1active;
             } else {
-            player2active();
+            player2active;
         };}
 })
 
