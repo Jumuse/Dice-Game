@@ -14,19 +14,29 @@ let currentGlobal = 0;
 let scoreTable = [0, 0];
 
 // Edit player name
-document.querySelector('.editNames').addEventListener('click', () => {
+const editNames = () => {
     player1.innerHTML = prompt("Entrez le nom du Joueur 1");
     player2.innerHTML = prompt("Entrez le nom du Joueur 2");
-});
+};
+
+// New Game function
+const resetGame = () => {
+    rollBtn.disabled = false;
+    scoreTable = [0, 0];
+    global1.innerHTML = scoreTable[0];
+    global2.innerHTML = scoreTable[1];
+    currentTemp = 0;
+    round1.innerHTML, round2.innerHTML = 0;
+    editNames();
+};
 
 //Functions player1 & 2
 const player1active = () => {
-    round1.innerHTML = currentTemp
+    round1.innerHTML = currentTemp;
     player1.style.fontWeight = "700";
     player2.style.fontWeight = "normal";
     dotRight.hidden = true;
     dotLeft.hidden = false;
-
 };
 const player2active = () => {
     round2.innerHTML = currentTemp;
@@ -36,20 +46,15 @@ const player2active = () => {
     dotLeft.hidden = true;
 };
 
-//Onload paremeters
-window.onload = (event) => {
-    player1active();
-  };
-
 // Function reset
-var reset = () => {
+const reset = () => {
     currentTemp = 0;
     currentGlobal = 0;
     player1Turn = !player1Turn;
 };
 
 //Roll the dice Player1
-document.querySelector('.roll').addEventListener('click', () => {
+const rollDice = () => {
     var randomNumber = Math.floor(Math.random() * 6) + 1;
     document.querySelector(".img").setAttribute("src", "dice" + randomNumber + ".png");
         if(randomNumber === 1) {
@@ -58,17 +63,18 @@ document.querySelector('.roll').addEventListener('click', () => {
         player1Turn = !player1Turn;
 
         } else {
-        currentTemp = parseFloat(currentTemp) + randomNumber
+        currentTemp = parseFloat(currentTemp) + randomNumber;
          
             if(player1Turn) {
-            player1active;
+            player1active();
             } else {
-            player2active;
-        };}
-});
+            player2active();
+            }
+        }
+};
 
 //Add currentScore to Global
-document.querySelector('.hold').addEventListener('click', () => {
+ const hold = () => {
     currentGlobal = parseFloat(currentTemp) + parseFloat(currentGlobal);
     currentTemp = 0;
     if(player1Turn) {
@@ -82,27 +88,30 @@ document.querySelector('.hold').addEventListener('click', () => {
         global2.textContent = scoreTable[1];
         round2.innerHTML = 0;
         player1active();
-    };
+    }
     reset();
-    if(scoreTable[0] >= 10){
+    if(scoreTable[0] >= 100){
         alert(`Félicitations ${player1.textContent}`);
         rollBtn.disabled = true;
         round1.innerHTML, round2.innerHTML = 0;
-    } else if (scoreTable[1] >= 10){
+    } else if (scoreTable[1] >= 100){
         alert(`Félicitations ${player2.textContent}`);
         rollBtn.disabled = true;
         round1.innerHTML, round2.innerHTML = 0;
-    };
-});
+    }
+};
 
-// New Game function
+document.querySelector('.editNames').addEventListener('click', () => {
+    editNames();
+});
 document.querySelector('.newGame').addEventListener('click', () => {
-    rollBtn.disabled = false;
-    scoreTable = [0, 0];
-    global1.innerHTML = scoreTable[0];
-    global2.innerHTML = scoreTable[1];
-    currentTemp = 0;
-    round1.innerHTML, round2.innerHTML = 0;
+    resetGame();
+});
+document.querySelector('.roll').addEventListener('click', () => {
+    rollDice();
 });
 
+document.querySelector('.hold').addEventListener('click', () => {
+    hold();
+});
 
