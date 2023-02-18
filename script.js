@@ -36,7 +36,7 @@ const player2active = () => {
     dotLeft.hidden = true;
 };
 
-// Onload paremeters
+//Onload paremeters
 window.onload = (event) => {
     player1active();
   };

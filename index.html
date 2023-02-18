@@ -12,64 +12,64 @@
     <title>Dice Game</title>
 </head>
 
-<body onload="">
-    <div class="">
-        <div class="playerOne">
-            <div class="wrapperLeft">
-                <h1 class="Player1">PLAYER 1</h1>
-                <div id="dotLeft"></div>
+<body class="font-sans text-lg" style="font-family: lato, sans-serif">
+    <div class="flex flex-nowrap justify-evenly items-center stretch">
+        <div class="playerOne p-2 bg-gray-200 h-screen w-full flex flex-col items-center justify-center">
+            <div class="wrapperLeft flex items-center">
+                <h1 class="Player1 text-4xl">PLAYER 1</h1>
+                <div id="dotLeft" class="h-3 w-3 rounded-full bg-red-500 ml-5"></div>
             </div>
 
-            <p class="globalOne">0</p>
+            <p class="globalOne pt-20 pb-40 text-red-500 text-xl">0</p>
                 
-            <div class="currentLeft">
+            <div class="currentLeft flex flex-col items-center p-3 h-auto w-1/4 bg-red-500">
                 <p class="currentTitle">CURRENT</p>
-                <p class="round1">0</p>
+                <p class="round1 text-white">0</p>
             </div>
         </div>
 
             
-        <div class="middlePart">       
-            <div class="wrapperNewgame">
-                <img src="newGame-icon.png" class=""></img>
+        <div class="middlePart bg-none h-full absolute flex flex-col justify-center items-center">       
+            <div class="wrapperNewgame flex">
+                <img src="newGame-icon.png" class="object-contain w-7 mr-3"></img>
                 <button type="button" class="newGame">NEW GAME</button>
             </div>
 
-            <div class="dice">
-                <img class="img" src="dice6.png">
+            <div class="dice flex justify-center p-40">
+                <img class="img w-1/4" src="dice6.png">
             </div>
 
-            <div class="bottomMiddle">
+            <div class="bottomMiddle flex flex-col items-center pt-5 pb-30">
 
                 <div class="flex p-4">
-                    <img src="roll-icon.png" class=""></img>
+                    <img src="roll-icon.png" class="object-contain w-7 mr-3"></img>
                     <button type="button" class="roll">ROLL DICE</button>
                 </div>
 
                 <div class="flex p-4">
-                    <img src="name-icon.png" class=""></img>
+                    <img src="name-icon.png" class="object-contain w-7 mr-3"></img>
                     <button type="button" class="editNames">EDIT NAMES</button>
                 </div>
 
                 <div class="flex p-4">
-                    <img src="hold-icon.png" class=""></img>
+                    <img src="hold-icon.png" class="object-contain w-7 mr-3"></img>
                     <button type="button" class="hold">HOLD</button>
                 </div>
             </div>
         </div>
 
 
-        <div class="playerTwo">
-            <div>
-                <div id="dotRight"></div>
-                <h1 class="Player2">PLAYER 2</h1>
+        <div class="playerTwo p-2 bg-gray-100 h-screen w-full flex flex-col items-center justify-center">
+            <div class="wrapperRight flex items-center">
+                <div id="dotRight" class="h-3 w-3 rounded-full bg-red-500 mr-5"></div>
+                <h1 class="Player2 text-4xl">PLAYER 2</h1>
             </div>
 
-            <p class="globalTwo">0</p>
+            <p class="globalTwo pt-20 pb-40 text-red-500 text-xl">0</p>
 
-            <div class="currentRight">
-                <p class="currentTitle">CURRENT</p>
-                <p class="round2">0</p>
+            <div class="currentRight flex flex-col items-center p-3 h-auto w-1/4 bg-red-500">
+                <p class="currentTitle ">CURRENT</p>
+                <p class="round2 text-white">0</p>
             </div>
         </div>
     </div>
