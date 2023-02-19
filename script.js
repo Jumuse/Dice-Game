@@ -56,7 +56,7 @@ const reset = () => {
 //Roll the dice Player1
 const rollDice = () => {
     var randomNumber = Math.floor(Math.random() * 6) + 1;
-    document.querySelector(".img").setAttribute("src", "dice" + randomNumber + ".png");
+    document.querySelector(".img").setAttribute("src", "Images/dice" + randomNumber + ".png");
         if(randomNumber === 1) {
         currentTemp = 0;
         round1.innerHTML, round2.innerHTML = 0;
